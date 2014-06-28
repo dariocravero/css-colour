@@ -15,8 +15,11 @@ describe 'validator test' do
 
   it 'should validate HEX colours' do
     assert CssColour::Validator.new('#123456').valid?
+    assert CssColour::Validator.new(' #123456').valid?
+    assert CssColour::Validator.new('#123456 ').valid?
     assert CssColour::Validator.new('#123').valid?
     assert CssColour::Validator.new('#FF1234').valid?
+    refute CssColour::Validator.new('#1 23456').valid?
     refute CssColour::Validator.new('123456').valid?
     refute CssColour::Validator.new('123').valid?
     refute CssColour::Validator.new('#GG0000').valid?
@@ -25,6 +28,7 @@ describe 'validator test' do
 
   it 'should validate HSL colours' do
     assert CssColour::Validator.new('hsl(0,0%,0%)').valid?
+    assert CssColour::Validator.new('hsl(0, 0%, 0%)').valid?
     assert CssColour::Validator.new('hsl(360,100%,100%)').valid?
     refute CssColour::Validator.new('hsl 0,0%,0%)').valid?
     refute CssColour::Validator.new('hsl(0,0%,0%').valid?
@@ -36,6 +40,7 @@ describe 'validator test' do
 
   it 'should validate HSLA colours' do
     assert CssColour::Validator.new('hsla(0,0%,0%,0)').valid?
+    assert CssColour::Validator.new('hsla(0, 0%, 0%, 0)').valid?
     assert CssColour::Validator.new('hsla(0,0%,0%,0.0)').valid?
     assert CssColour::Validator.new('hsla(360,100%,100%,1)').valid?
     assert CssColour::Validator.new('hsla(360,100%,100%,1.0)').valid?
@@ -50,6 +55,7 @@ describe 'validator test' do
 
   it 'should validate RGB colours' do
     assert CssColour::Validator.new('rgb(0,0,0)').valid?
+    assert CssColour::Validator.new('rgb(0, 0, 0)').valid?
     assert CssColour::Validator.new('rgb(255,255,255)').valid?
     refute CssColour::Validator.new('rgb 0,0,0)').valid?
     refute CssColour::Validator.new('rgb(0,0,0 ').valid?
@@ -63,6 +69,7 @@ describe 'validator test' do
 
   it 'should validate RGBA colours' do
     assert CssColour::Validator.new('rgba(0,0,0,0)').valid?
+    assert CssColour::Validator.new('rgba(0, 0, 0, 0)').valid?
     assert CssColour::Validator.new('rgba(0,0,0,0.0)').valid?
     assert CssColour::Validator.new('rgba(255,255,255,1)').valid?
     assert CssColour::Validator.new('rgba(255,255,255,1.0)').valid?

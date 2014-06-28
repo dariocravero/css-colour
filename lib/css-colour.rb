@@ -9,8 +9,7 @@ module CssColour
 
     def initialize(value); self.colour = value; end
 
-    def colour=(value); @colour = clean(value); end
-    def clean(value); value.downcase.gsub(SPACE, NO_SPACE); end
+    def colour=(value); @colour = value.downcase.strip; end
 
     def valid?; inherit? or websafe? or hex? or rgb? or rgba? or hsl? or hsla?; end
 

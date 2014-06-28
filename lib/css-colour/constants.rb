@@ -1,9 +1,5 @@
 module CssColour
   module Constants
-    SPACE = /\s/
-
-    NO_SPACE = ''.freeze
-
     INHERIT = 'inherit'.freeze
 
     WEBSAFE = %w(aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue
@@ -53,12 +49,12 @@ module CssColour
       [01]    # 0 or 1
     }x
 
-    HSL = /^hsl\((#{RANGE_0_360}),(#{RANGE_0_100}%),(#{RANGE_0_100}%)\)$/
+    HSL = /^hsl\(\s*(#{RANGE_0_360})\s*,\s*(#{RANGE_0_100}%)\s*,\s*(#{RANGE_0_100}%)\s*\)$/
 
-    HSLA = /^hsla\((#{RANGE_0_360}),(#{RANGE_0_100}%),(#{RANGE_0_100}%),(#{RANGE_ALPHA})\)$/
+    HSLA = /^hsla\(\s*(#{RANGE_0_360})\s*,\s*(#{RANGE_0_100}%),\s*(#{RANGE_0_100}%)\s*,\s*(#{RANGE_ALPHA})\s*\)$/
 
-    RGB = /^rgb\((#{RANGE_0_255}),(#{RANGE_0_255}),(#{RANGE_0_255})\)$/
+    RGB = /^rgb\(\s*(#{RANGE_0_255})\s*,\s*(#{RANGE_0_255})\s*,\s*(#{RANGE_0_255})\s*\)$/
 
-    RGBA = /^rgba\((#{RANGE_0_255}),(#{RANGE_0_255}),(#{RANGE_0_255}),(#{RANGE_ALPHA})\)$/
+    RGBA = /^rgba\(\s*(#{RANGE_0_255})\s*,\s*(#{RANGE_0_255})\s*,\s*(#{RANGE_0_255})\s*,\s*(#{RANGE_ALPHA})\s*\)$/
   end
 end
