@@ -1,6 +1,6 @@
 # CssColour
 
-![travis](https://travis-ci.org/dariocravero/css-colour.svg)
+[![Build status](https://travis-ci.org/dariocravero/css-colour.svg)](https://travis-ci.org/dariocravero/css-colour)
 
 Ruby CSS Colour validator.
 
