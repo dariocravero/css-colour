@@ -1,5 +1,7 @@
 # CssColour
 
+[![Build status](https://travis-ci.org/dariocravero/css-colour.svg)](https://travis-ci.org/dariocravero/css-colour)
+
 Ruby CSS Colour validator.
 
 It will tell if a colour is either:
