@@ -7,6 +7,10 @@ describe 'validator test' do
     assert CssColour::Validator.new('inherit').valid?
   end
 
+  it 'should validate transparent' do
+    assert CssColour::Validator.new('transparent').valid?
+  end
+
   it 'should validate websafe colours' do
     assert CssColour::Validator.new('white').valid?
     assert CssColour::Validator.new('White').valid?

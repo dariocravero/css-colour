@@ -11,9 +11,10 @@ module CssColour
 
     def colour=(value); @colour = value.downcase.strip; end
 
-    def valid?; inherit? or websafe? or hex? or rgb? or rgba? or hsl? or hsla?; end
+    def valid?; inherit? or transparent? or websafe? or hex? or rgb? or rgba? or hsl? or hsla?; end
 
     def inherit?; @colour == INHERIT; end
+    def transparent?; @colour == TRANSPARENT; end
     def websafe?; WEBSAFE.include? @colour; end
     def hex?;   is? HEX;  end
     def hsl?;   is? HSL;  end
