@@ -46,6 +46,7 @@ describe 'validator test' do
     assert CssColour::Validator.new('hsla(0,0%,0%,0)').valid?
     assert CssColour::Validator.new('hsla(0, 0%, 0%, 0)').valid?
     assert CssColour::Validator.new('hsla(0,0%,0%,0.0)').valid?
+    assert CssColour::Validator.new('hsla(0,0%,0%,0.15)').valid?
     assert CssColour::Validator.new('hsla(360,100%,100%,1)').valid?
     assert CssColour::Validator.new('hsla(360,100%,100%,1.0)').valid?
     refute CssColour::Validator.new('hsla 0,0%,0%,0.0)').valid?
@@ -75,6 +76,7 @@ describe 'validator test' do
     assert CssColour::Validator.new('rgba(0,0,0,0)').valid?
     assert CssColour::Validator.new('rgba(0, 0, 0, 0)').valid?
     assert CssColour::Validator.new('rgba(0,0,0,0.0)').valid?
+    assert CssColour::Validator.new('rgba(0,0,0,0.10)').valid?
     assert CssColour::Validator.new('rgba(255,255,255,1)').valid?
     assert CssColour::Validator.new('rgba(255,255,255,1.0)').valid?
     refute CssColour::Validator.new('rgba 0,0,0,0.0)').valid?
