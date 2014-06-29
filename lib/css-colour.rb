@@ -20,6 +20,8 @@ module CssColour
     def hsla?;  is? HSLA; end
     def rgb?;   is? RGB;  end
     def rgba?;  is? RGBA; end
-    private def is?(type); !type.match(@colour).nil?; end
+
+    private
+      def is?(type); !type.match(@colour).nil?; end
   end
 end
